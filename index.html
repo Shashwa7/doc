@@ -1,0 +1,372 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS d0c</title>
+
+     <!--Font awesome CDN-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="header">
+            <nav id="navbar" class="nav">
+                   <header id="main-topic"><h1>CSS Basics</h1></header>
+   
+                   <div class="menu-toggle">
+                       <!-- hamburger menu and x  from font awesome cdn classes-->
+                       <i class="fas fa-bars"></i>
+                       <i class="fas fa-times"></i>
+                   </div>
+   
+                       <ul class="nav-list">
+                           <li class="nav-items"><a href="#intro" class="nav-link">Introduction</a></li>
+                           <li class="nav-items"><a href="#css-rule-set" class="nav-link">CSS rule set</a></li>
+                           <li class="nav-items"><a href="#font-text" class="nav-link">CSS font & text</a></li>
+                           <li class="nav-items"><a href="#all-about-boxes" class="nav-link">CSS: all about boxes</a></li><hr>
+                           <li class="nav-items"><a href="#conclusion" class="nav-link final">Conclusion</a></li>
+                       </ul>
+               </nav>
+           </div>
+   
+       <main id="main-doc">   
+               <section class="main-section">
+                  <header class="topic" id="intro">What is CSS?</header>
+                  <article class="topic-info">
+                   <p class="info">
+                       Like HTML, CSS is not a programming language. It's not a markup language either. CSS is a style sheet language. CSS is what you use to selectively style HTML elements. For example, this CSS selects paragraph text, setting the color to red:  
+                   </p>
+                   <code class='code-snippet'>
+                       p {
+                           color: red;
+                         }
+                   </code>
+                   <p class="info">
+                       Let's try it out! Using a text editor, paste the three lines of CSS (above) into a new file. Save the file as style.css in a directory named styles.
+                   </p>
+   
+                   <p class="info">
+                       To make the code work, we still need to apply this CSS (above) to your HTML document. Otherwise, the styling won't change the appearance of the HTML. (If you haven't been following our project, pause here to read Dealing with files and HTML basics.)
+                   </p>
+   
+       
+               
+                   <ol class="key-points">
+                       <li class="key-info">
+                           Open your index.html file. Paste the following line in the head:
+                           <code class="code-snippet">
+                              < link href="styles/style.css" rel="stylesheet" >
+                           </code>
+                       </li>
+                       <li class="key-info">
+                           Save index.html and load it in your browser. You should see something like this:
+                           <img src="https://media.prod.mdn.mozit.cloud/attachments/2014/11/17/9435/810b4c83a9071cfef7586a6064eb458f/website-screenshot-styled.png" alt="" class="img-snippet">
+                           If your paragraph text is red, congratulations! Your CSS is working.
+                       </li>
+                   </ol> 
+                  </article>
+                <hr>
+               </section>
+   
+               <section class="main-section">
+                  <header class="topic" id="css-rule-set">Anatomy of a CSS ruleset</header>
+                  <article class="topic-info">
+                   <p class="info">
+                       Let's dissect the CSS code for red paragraph text to understand how it works : 
+                       <img src="https://media.prod.mdn.mozit.cloud/attachments/2014/11/18/9461/012655e623bef579c9bd376e227bc648/css-declaration-small.png" alt="" class="img-snippet">
+                   </p>
+               
+                   <p class="info">
+                       The whole structure is called a ruleset. (The term ruleset is often referred-to as just rule.) Note the names of the individual parts:
+   
+                       <dl class="key-points">
+                           <dt class="key-topic">Selector</dt>
+                           <dd class="key-info">
+                               This is the HTML element name at the start of the ruleset. It defines the element(s) to be styled (in this example, < p > elements). To style a different element, change the selector
+                           </dd>
+   
+                           <dt class="key-topic">Declaration</dt>
+                           <dd class="key-info">
+                               This is a single rule like color: red;. It specifies which of the element's properties you want to style.
+                           </dd>
+   
+                           <dt class="key-topic">Properties</dt>
+                           <dd class="key-info">
+                               These are ways in which you can style an HTML element. (In this example, color is a property of the < p > elements.) In CSS, you choose which properties you want to affect in the rule.
+                           </dd>
+   
+                           <dt class="key-topic">Property value</dt>
+                           <dd class="key-info">
+                               To the right of the property—after the colon—there is the property value. This chooses one out of many possible appearances for a given property. (For example, there are many color values in addition to red.)
+                           </dd>
+                       </dl>
+                   </p>
+   
+                   <p class="info">
+                       Note the other important parts of the syntax:
+                       <ul class="key-points">
+                           <li class="key-info">
+                               Apart from the selector, each ruleset must be wrapped in curly braces. ({})
+                           </li>
+                           <li class="key-info">
+                               Within each declaration, you must use a colon (:) to separate the property from its value or values.
+                           </li>
+                           <li class="key-info">
+                               Within each ruleset, you must use a semicolon (;) to separate each declaration from the next one.
+                           </li>
+                       </ul>
+   
+                       To modify multiple property values in one ruleset, write them separated by semicolons, like this:
+                       <code class='code-snippet'>
+                           p {
+                               color: red;
+                               width: 500px;
+                               border: 1px solid black;
+                             }
+                       </code>
+                   </p>
+   
+                   <p class="info">
+                       <h3 class="sub-heading">Selecting multiple elements</h3>
+                       You can also select multiple elements and apply a single ruleset to all of them. Separate multiple selectors by commas. For example:
+                       <code class='code-snippet'>
+                           p, li, h1 {
+                               color: red;
+                             }
+                       </code>
+                   </p>
+   
+                   <p class="info">
+                       <h3 class="sub-heading">Different types of selectors</h3>
+                       There are many different types of selectors. The examples above use ,<strong>element selectors</strong>, which select all elements of a given type. But we can make more specific selections as well. Here are some of the more common types of selectors:
+                       
+                       <table class="table-snippet">
+                           <tr class="row">
+                               <th class="tbl-heading">
+                                   Selector-name
+                               </th>
+                               <th class="tbl-heading">
+                                   What does it select
+                               </th>
+                               <th class="tbl-heading">
+                                   Example
+                               </th>
+                           </tr>
+   
+                           <tr class="row">
+                               <td class="tbl-info">
+                                   Element selector (sometimes called a tag or type selector)
+                               </td>
+                               <td class="tbl-info">All HTML elements of the specified type.</td>
+                               <td class="tbl-info">p
+                                   selects < p ></td>
+                           </tr>
+   
+                           <tr class="row">
+                               <td class="tbl-info">
+                                   ID selector
+                               </td>
+                               <td class="tbl-info">
+                                   The element on the page with the specified ID. On a given HTML page, each id value should be unique.
+                               </td>
+                               <td class="tbl-info">
+                                   #my-id
+                                   selects < p id="my-id"> or < a id="my-id">
+                               </td>
+                           </tr>
+   
+                           <tr class="row">
+                               <td class="tbl-info">
+                                   Class selector
+                               </td>
+                               <td class="tbl-info">
+                                   The element(s) on the page with the specified class. Multiple instances of the same class can appear on a page.
+                               </td>
+                               <td class="tbl-info">
+                                   .my-class selects < p class="my-class"> and < a class="my-class">
+                               </td>
+                           </tr>
+   
+                           <tr class="row">
+                               <td class="tbl-info">
+                                   Attribute selector	
+                               </td>
+                               <td class="tbl-info">
+                                   The element(s) on the page with the specified attribute.
+                               </td>
+                               <td class="tbl-info">
+                                   img[src] selects < img src="myimage.png"> but not < img >
+                               </td>
+                           </tr>
+   
+                           <tr class="row">
+                               <td class="tbl-info">
+                                   Pseudo-class selector
+                               </td>
+                               <td class="tbl-info">
+                                   The specified element(s), but only when in the specified state. (For example, when a cursor hovers over a link.)
+                               </td>
+                               <td class="tbl-info">
+                                   a:hover selects < a >, but only when the mouse pointer is hovering over the link.
+                               </td>
+                           </tr>
+                       </table>
+                       There are many more selectors to discover. To learn more, see the MDN <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors" target="_blank" class='site-link'>Selectors guide.</a> 
+                   </p>
+                  </article>
+                <hr>
+               </section>
+   
+               <section class="main-section">
+                   <header class="topic" id="font-text">Fonts and text</header>
+                   <article class="topic-info">
+                    <p class="info">
+                       Now that we've explored some CSS fundamentals, let's improve the appearance of the example by adding more rules and information to the style.css file.
+                    </p>
+                    <code class='code-snippet'>
+                        p {
+                            color: red;
+                          }
+                    </code>
+                    <p class="info">
+                        Let's try it out! Using a text editor, paste the three lines of CSS (above) into a new file. Save the file as style.css in a directory named styles.
+                    </p>
+    
+                    <p class="info">
+                       <ol class="key-points">
+                           <li class="key-info">
+                               First, find the output from Google Fonts that you previously saved from<em>What will your website look like?</em>. Add the < link > element somewhere inside your <b>index.html's head</b> (anywhere between the < head > and < /head > tags). It looks something like this:
+                               <code class="code-snippet">
+                                   < link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" >
+                               </code>
+                               This code links your page to a style sheet that loads the Open Sans font family with your webpage.
+                           </li>
+                           <li class="key-info">
+                               Next, delete the existing rule you have in your <strong>style.css</strong> file. It was a good test, but let's not continue with lots of red text.
+                           </li>
+   
+                           <li class="key-info">
+                               Add the following lines (shown below), replacing the <strong>font-family</strong> assignment with your <strong>font-family</strong> selection from <em>What will your website look like?</em>.<br> The property <strong>font-family</strong> refers to the font(s) you want to use for text. This rule defines a global base font and font size for the whole page.<br> Since < html > is the parent element of the whole page, all elements inside it inherit the same <strong>font-size</strong> and <strong>font-family</strong>.
+                               
+                               <code class="code-snippet">
+                                   html {<br>
+                                       font-size: 10px;<br> /* px means "pixels": the base font size is now 10 pixels high  */<br><br>
+                                       font-family: "Open Sans", sans-serif;<br> /* this should be the rest of the output you got from Google fonts */<br>
+                                     }
+                               </code>
+                               <p class="note">
+                                   Note: Anything in CSS  between /* and */ is a CSS comment. The browser ignores comments as it renders the code. CSS comments are a way for you to write helpful notes about your code or logic.
+                               </p>
+                           </li>
+                           <li class="key-info">
+                               Now let's set font sizes for elements that will have text inside the HTML body (< h1 >, < li>, and < p >). We'll also center the heading. Finally, let's expand the second ruleset (below) with settings for line height and letter spacing to make body content more readable.
+                               <code class="code-snippet">
+                                   h1 {<br>
+                                       font-size: 60px;
+                                       text-align: center;
+                                     <br>}<br>
+                                     
+                                     p, li {<br>
+                                       font-size: 16px;<br>    
+                                       line-height: 2;<br>
+                                       letter-spacing: 1px;<br>
+                                     }
+                               </code>
+                               Adjust the px values as you like. Your work-in-progress should look similar to this:
+                               <img src="https://media.prod.mdn.mozit.cloud/attachments/2014/11/18/9447/b740d166e246689c8b4d3fb466da427f/website-screenshot-font-small.png" alt="" class="img-snippet">
+                           </li>
+                       </ol> 
+                   </p>
+                   </article>
+                 <hr>
+                </section>
+    
+                <section class="main-section">
+                   <header class="topic" id="all-about-boxes">CSS: all about boxes</header>
+                   <article class="topic-info">
+                    <p class="info">
+                       Something you'll notice about writing CSS: a lot of it is about boxes. This includes setting size, color, and position. Most HTML elements on your page can be thought of as boxes sitting on top of other boxes.  
+                    </p>
+                    <img src="https://media.prod.mdn.mozit.cloud/attachments/2014/11/18/9441/323fac82af80f3a7d639fa4e3624ad9d/boxes.jpg" alt="" class="img-snippet">
+                    
+                    <p class="info">
+                       CSS layout is mostly based on the box model. Each box taking up space on your page has properties like:
+   
+                       <ul class="key-points">
+                           <li class="key-info">
+                               <strong>padding,</strong> the space around the content. In the example below, it is the space around the paragraph text.
+                           </li>
+                           <li class="key-info">
+                               <strong>border,</strong> the solid line that is just outside the padding.
+                           </li>
+                           <li class="key-info">
+                               <strong>margin,</strong> the space around the outside of the border.
+                           </li>  
+                       </ul>
+                    </p>
+   
+                    <img src="https://media.prod.mdn.mozit.cloud/attachments/2014/11/18/9443/63d72109948ccedb5e0f0dd5f9cb3716/box-model.png" alt="" class="img-snippet">
+                    
+                    <p class="info">
+                       In this section we also use:
+                       <ul class="key-points">
+                           <li class="key-info">
+                               <strong>width </strong> (of an element).
+                           </li>
+                           <li class="key-info">
+                               <strong>background-color</strong>, the color behind an element's content and padding.
+                           </li>
+                           <li class="key-info">
+                               <strong>color</strong>,the color of an element's content (usually text).
+                           <li class="key-info">
+                               <strong>text-shadow</strong>sets a drop shadow on the text inside an element.
+                           </li>
+                           <li class="key-info">
+                               <strong>display</strong>sets the display mode of an element. (keep reading to learn more)
+                           </li>
+                       </ul>
+                    </p><br>
+                   <h3 class="sub-heading">Centering the image</h3>
+                   <p class="info">
+                       
+                       <code class="code-snippet">
+                           img {
+                               display: block;
+                               margin: 0 auto;
+                             }
+                       </code>
+                       Using <strong>margin: 0 auto;</strong> trick to center <strong>block level </strong>elements.<br>The < body > is a <strong>block level </strong>, meaning it takes up space on the page. A block element can have margin and other spacing values applied to it. <br><br>In contrast, images are <strong>online elements</strong>. It is not possible to apply margin or spacing values to inline elements. So to apply margins to the image, we must give the image block-level behavior using <strong>display: block;</strong>.
+                   </p>
+                  
+                   <p class="note">
+                       > The instructions above assume that you're using an image smaller than the width set on the body.<br> (600 pixels) If your image is larger, it will overflow the body, spilling into the rest of the page.<br><br> >To fix this, you can either: 1) reduce the image width using a graphics editor, or 2)  use CSS to size the image by setting the width property on the < img> element with a smaller value.
+                   </p>
+                   <p class="note">
+                       > Don't be too concerned if you don't completely understand display: block; or the differences between a block element and an inline element. <br><br>>It will make more sense as you continue your study of CSS. You can find more information about different display values on MDN's  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" class="site-link" target="_blank"> reference page</a>.
+                   </p>
+                   </article>
+                 <hr>
+                </section>
+   
+                <section class="main-section">
+                   <header class="topic" id="conclusion">Conclusion</header>
+                   <article class="topic-info">
+                    <p class="info">
+                       If you followed all the instructions in this article, you should have a page that looks similar to this one: 
+                    </p>
+                    <img src="https://media.prod.mdn.mozit.cloud/attachments/2014/11/18/9455/aaae1c5cb0e167d980b95ae9e3744fe8/website-screenshot-final.png" alt="" class="img-snippet">
+                    
+                    <p class="info">
+                     (You can <u><a href="http://mdn.github.io/beginner-html-site-styled/" class="site-link" target="_blank">view our version here.</a></u> ) If you get stuck, you can always compare your work with our
+                     <u><a href="   https://github.com/mdn/beginner-html-site-styled/blob/gh-pages/styles/style.css
+                       " class="site-link" target="_blank">finished example code on GitHub.</a></u>
+                    </p>
+                   </article>
+                 <hr>
+                </section>
+       </main>
+       <script src="app.js"></script>
+    
+</body>
+</html>
