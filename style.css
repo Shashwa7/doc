@@ -222,19 +222,17 @@ table, th, td{
 
 @media (max-width:768px){
     .header, #main-doc{
-        position: initial;
+        position: relative;
         top:initial;
         right:initial;
         left:initial;
-        width: initial;
-        min-height: initial;
         width: 100%;
+        min-height: initial;
     }
     .header{
-        width: 100%;
         z-index: 1;
     }
-    #main{
+    #min-doc{
         z-index:-1;
     }
     .menu-toggle{
@@ -314,7 +312,7 @@ table, th, td{
         padding-left: 1rem;
     }
     #main-doc{
-        padding: initial;
+        padding: .2rem;
         margin:initial;
     }
     .topic{
