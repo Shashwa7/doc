@@ -99,6 +99,7 @@ a{
     color:rgba(30, 207, 238, 0.856);
     font-size: 3rem;
     font-family: var(--font-H);
+    cursor: pointer;
 }
 /*nav ends*/
 
@@ -221,12 +222,20 @@ table, th, td{
 
 @media (max-width:768px){
     .header, #main-doc{
-        position: relative;
+        position: initial;
         top:initial;
         right:initial;
         left:initial;
         width: initial;
         min-height: initial;
+        width: 100%;
+    }
+    .header{
+        width: 100%;
+        z-index: 1;
+    }
+    #main{
+        z-index:-1;
     }
     .menu-toggle{
         color: #fff;
@@ -242,21 +251,21 @@ table, th, td{
       
         /*make sure it remian top of everything */
         z-index: 1500; 
-            display: block;
+        display: block;
         }
+
         .fa-times{
             display: none;
         }
     .nav-list{
         padding:2rem;
-        list-style: none;
         position: fixed;
         left:0;
         top:0;
         width: 80%;
         height: 100vh;
         flex-direction: column;
-        z-index: 1250;
+        z-index: 1750;
         transform: translateX(-100%); 
         transition: transform .5s;
         }
@@ -305,10 +314,8 @@ table, th, td{
         padding-left: 1rem;
     }
     #main-doc{
-        width:100%;
         padding: initial;
         margin:initial;
-        padding: initial;
     }
     .topic{
         font-size: 1.3rem;
