@@ -6,11 +6,16 @@ const selectElement = element => {
 const menuToggler = selectElement('.menu-toggle');
 const body = selectElement('body');
 const nav_list = selectElement('.nav-list');
+const title = selectElement('#main-topic');
 
 menuToggler.addEventListener('click', () => {
     body.classList.toggle('open');
 });
 
 nav_list.addEventListener('click', () => {
+    body.classList.toggle('open');
+});
+
+title.addEventListener('click', () => {
     body.classList.toggle('open');
 });
