@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden; /*necessary*/
     
 }
 body{
@@ -59,7 +60,6 @@ a{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1; 
     min-height: 100vh;
     z-index: 100;
     overflow-x: hidden;
@@ -224,12 +224,8 @@ table, th, td{
 
 @media (max-width:820px){
     body{
-        overflow-x: hidden;
         padding:0;
         margin: 0;
-    }
-    body::before{
-        overflow-x: hidden;
     }
     .nav, #main-doc{
         position: initial;
@@ -250,7 +246,7 @@ table, th, td{
     overflow-x: hidden;
    }
     .nav-list{
-        position: absolute;
+        position: fixed;
         right:0;
         top:0;
         min-height: 30vh;
@@ -269,6 +265,9 @@ table, th, td{
         opacity:0;
     }
     .burger{
+        position: fixed;
+        right:2rem;
+        top:2rem;
         display: block;
         color: #fff;
         font-size: 2.2rem;
