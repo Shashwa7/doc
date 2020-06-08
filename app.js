@@ -22,6 +22,7 @@ const nav_slide = () => {
         });
 
         burger.classList.toggle('toggle');
+        burger.classList.toggle('fix-burger');
 
 });
 
