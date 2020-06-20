@@ -17,11 +17,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; /*necessary*/
-    
 }
 body{
-    overflow: hidden; 
+    overflow-x: hidden; 
     font-size: 1.12rem;
     position: relative;
     font-family: var(--font-C);
